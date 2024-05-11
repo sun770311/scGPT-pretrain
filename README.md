@@ -19,7 +19,9 @@ Drawing on existing foundational model scGPT, we pretrained an LLM on 300,000 hu
 
 ## References
 https://github.com/bowang-lab/scGPT/tree/main
+
 https://www.nature.com/articles/s41592-024-02201-0
+
 https://chanzuckerberg.github.io/cellxgene-census/
 
 
