@@ -1,0 +1,14 @@
+# python should be at least 3.11
+anndata==0.8.0
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.0
+scipy==1.12.0
+torch==2.0.1
+torchtext==0.6.0
+wandb==0.16.6
+scanpy==1.9.8
+typing_extensions==4.8.0
+cellxgene_census==1.10.2
+scvi==0.6.8 
+matplotlib==3.8.1
