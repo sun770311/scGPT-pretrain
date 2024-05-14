@@ -1,4 +1,4 @@
-# scGPT-pretrain
+# scLLM-pretrain
 Hannah Sun
 
 Mentor: Dr. Guan Tao Zheng
