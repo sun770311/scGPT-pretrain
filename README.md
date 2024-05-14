@@ -35,8 +35,18 @@ Part 2: Further adjustments for training
 4. Tokenization: Convert gene names to numeric indexes: [0, total number of genes in the dataset - 1], special values: <cls> = total number of genes, <pad> = total number of genes + 1
 5. Arbitrarily shield the gene expression level of each cell. The percentage of masking is selected from [0.25, 0.5, 0.75]. The masking position does not include cls and pad.
 
-## Training
+## Model Initialization
 
+## Training
+A total of 6 training cycles. One cycle contains ~9000 batches, and one batch contains 32 cells.
+
+1. At the beginning of each cycle, the gene expression level of each cell is arbitrarily masked
+2. Fill in the blanks: predict the expression level of blocked genes
+3. Calculate the loss:
+a. Mean squared error (MSE: Mean squared error) between the true value and the predicted value of the masking position
+b. The mean square error between the true value and the predicted value based on cell embedding ("cls")
+4. Update model parameters based on loss
+5. Calculate the total loss of all batches in a cycle
 
 ## Evaluation
 
