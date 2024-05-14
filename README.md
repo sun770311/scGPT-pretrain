@@ -10,7 +10,7 @@ Generative artificial intelligence (GenAI) is a branch of artificial intelligenc
 
 A large language model (LLM), such as GPT (Generative Pretrained Transformer), is a type of generative artificial intelligence model. LLM learns from extensive data sets to process and generate natural language for tasks such as translation and conversation.
 
-## LLMs and single-cell data
+## LLMs and Single-cell Data
 An analogy can be drawn between language and cell biology. Words form sentences, similar to genes building cells. Therefore, large language models can be adapted to single-cell RNA sequencing studies.
 
 However, current machine learning-based methods in single-cell research are quite fragmented and have limited data sets. To overcome this limitation, the project aims to develop a single-cell-based LLM. The model is pre-trained on vast amounts of data, and then fine-tuned and tested according to different analysis tasks.
@@ -36,6 +36,15 @@ Part 2: Further adjustments for training
 5. Arbitrarily shield the gene expression level of each cell. The percentage of masking is selected from [0.25, 0.5, 0.75]. The masking position does not include cls and pad.
 
 ## Model Initialization
+Traditional TransformerModel: Input embedding + location information as model input; part of the input to the decoder comes from the encoder
+
+Modified TransformerModel for project goals: The embeddings of the gene name and gene expression level are used as model input, without adding position information. The traditional Decoder is removed because the main purpose of the project is not to generate but to understand single-cell data, while the Encoder is retained. The output of the Encoder is directly connected to fully connected neural networks, and different target tasks will activate different neural networks.
+
+Neural Network Architecture: 
+1. Number of layers = 12
+2. Attention heads = 8
+3. Embedding size = 512
+4. Fully-connected layer size = 512
 
 ## Training
 A total of 6 training cycles. One cycle contains ~9000 batches, and one batch contains 32 cells.
@@ -48,7 +57,8 @@ b. The mean square error between the true value and the predicted value based on
 4. Update model parameters based on loss
 5. Calculate the total loss of all batches in a cycle
 
-## Evaluation
+## Saving Best Model
+Save the best performing model as "best_model.pt", which saves all model parameters.
 
 ## References
 The project draws on existing single-cell LLM scGPT's framework. Details can be found in the scGPT paper and codebase.
