@@ -17,12 +17,39 @@ However, current machine learning-based methods in single-cell research are quit
 
 Drawing on existing foundational model scGPT, we pretrained an LLM on 300,000 human blood cells, minimizing loss between real and predicted gene expression levels. This versatile model hopes to improve the accuracy and efficiency of single-cell analysis, thereby accelerating discovery and innovation in biology.
 
+## Data Sampling
+Select human blood cells by complete samples at random, ensuring that their total does not surpass 300,000.
+
+## Preprocessing
+Part 1: Based on single-cell
+1. Filter out genes whose total number in the entire matrix is too low (set threshold)
+2. Filter out cells with too few genes in the entire matrix (set threshold)
+3. Screen the top 1200 highly variable genes in each sample: A highly variable gene is one that shows significant variability in its expression levels across different samples, conditions, or individuals. Highly variable genes can signal key changes in gene expression that drive disease processes, response to therapy, or developmental stages.
+4. Normalize the total number of genes in each cell in the entire matrix
+5. Discrete binning of continuous expressions in the entire matrix
+
+Part 2: Further adjustments for training
+1. Split data into 97% training and 3% validation
+2. Exclude zero gene expressions, resulting in cells with differing numbers of non-zero genes
+3. Align the information of all cells, adding special values <cls> and <pad>, so that the total length of cells is 1201 (1200 highly variable genes + <cls>)
+<cls>: We can extract the embedding of the cell from this position, with a value of 0
+<pad>: used to fill the empty space of the sequence, the value is -2
+4. Tokenization: Convert gene names to numeric indexes: [0, total number of genes in the dataset - 1], special values: <cls> = total number of genes, <pad> = total number of genes + 1
+5. Arbitrarily shield the gene expression level of each cell. The percentage of masking is selected from [0.25, 0.5, 0.75]. The masking position does not include cls and pad.
+
+## Training
+
+
+## Evaluation
+
 ## References
+The project draws on existing single-cell LLM scGPT's framework. Details can be found in the scGPT paper and codebase.
+
 https://github.com/bowang-lab/scGPT/tree/main
 
 https://www.nature.com/articles/s41592-024-02201-0
 
-https://chanzuckerberg.github.io/cellxgene-census/
+Link to the CELLxGENE Census API: https://chanzuckerberg.github.io/cellxgene-census/
 
 
 
