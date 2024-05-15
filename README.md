@@ -49,6 +49,7 @@ Neural Network Architecture:
 2. Attention heads = 8
 3. Embedding size = 512
 4. Fully-connected layer size = 512
+![TransformerModel](https://github.com/sun770311/scLLM-pretrain/blob/main/Transformer.png)
 
 ## Training
 A total of 6 training cycles. One cycle contains ~9000 batches, and one batch contains 32 cells.
