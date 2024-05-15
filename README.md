@@ -37,6 +37,7 @@ Part 2: Further adjustments for training
 3. Align the information of all cells, adding special values "cls" and "pad", so that the total length of cells is 1201 (1200 highly variable genes + "cls"). "cls": We can extract the embedding of the cell from this position, with a value of 0. "pad": used to fill the empty space of the sequence, the value is -2
 4. Tokenization: Convert gene names to numeric indexes: [0, total number of genes in the dataset - 1], special values: <cls> = total number of genes, <pad> = total number of genes + 1
 5. Arbitrarily shield the gene expression level of each cell. The percentage of masking is selected from [0.25, 0.5, 0.75]. The masking position does not include cls and pad.
+![Preprocess2](https://github.com/sun770311/scLLM-pretrain/blob/main/Preprocess2.png)
 
 ## Model Initialization
 Traditional TransformerModel: Input embedding + location information as model input; part of the input to the decoder comes from the encoder
