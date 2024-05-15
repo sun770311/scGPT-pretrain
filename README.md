@@ -19,6 +19,7 @@ Drawing on existing foundational model scGPT, we pretrained an LLM on 300,000 hu
 
 ## Data Sampling
 Retrieve all human blood cells via the CELLxGENE Census API. Select human blood cells by complete samples at random, ensuring that their total does not surpass 300,000.
+![CensusAPI](https://github.com/sun770311/scLLM-pretrain/blob/main/Census_API.png)
 
 ## Preprocessing
 Part 1: Based on single-cell
