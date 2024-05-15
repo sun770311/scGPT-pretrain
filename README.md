@@ -18,7 +18,7 @@ However, current machine learning-based methods in single-cell research are quit
 Drawing on existing foundational model scGPT, we pretrained an LLM on 300,000 human blood cells, minimizing loss between real and predicted gene expression levels. This versatile model hopes to improve the accuracy and efficiency of single-cell analysis, thereby accelerating discovery and innovation in biology.
 
 ## Data Sampling
-Select human blood cells by complete samples at random, ensuring that their total does not surpass 300,000.
+Retrieve all human blood cells via the CELLxGENE Census API. Select human blood cells by complete samples at random, ensuring that their total does not surpass 300,000.
 
 ## Preprocessing
 Part 1: Based on single-cell
