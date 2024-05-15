@@ -26,8 +26,10 @@ Part 1: Based on single-cell
 1. Filter out genes whose total number in the entire matrix is too low (set threshold)
 2. Filter out cells with too few genes in the entire matrix (set threshold)
 3. Screen the top 1200 highly variable genes in each sample: A highly variable gene is one that shows significant variability in its expression levels across different samples, conditions, or individuals. Highly variable genes can signal key changes in gene expression that drive disease processes, response to therapy, or developmental stages.
+![HVG](https://github.com/sun770311/scLLM-pretrain/blob/main/HVG.png)
 4. Normalize the total number of genes in each cell in the entire matrix
 5. Discrete binning of continuous expressions in the entire matrix
+![Binning](https://github.com/sun770311/scLLM-pretrain/blob/main/Binning.png)
 
 Part 2: Further adjustments for training
 1. Split data into 97% training and 3% validation
