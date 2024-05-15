@@ -49,7 +49,7 @@ Neural Network Architecture:
 2. Attention heads = 8
 3. Embedding size = 512
 4. Fully-connected layer size = 512
-![TransformerModel](https://github.com/sun770311/scLLM-pretrain/blob/main/Transformer.png)
+![TransformerModel](https://github.com/sun770311/scLLM-pretrain/blob/main/TransformerModel.png)
 
 ## Training
 A total of 6 training cycles. One cycle contains ~9000 batches, and one batch contains 32 cells.
@@ -61,6 +61,7 @@ a. Mean squared error (MSE: Mean squared error) between the true value and the p
 b. The mean square error between the true value and the predicted value based on cell embedding ("cls")
 4. Update model parameters based on loss
 5. Calculate the total loss of all batches in a cycle
+![Training](https://github.com/sun770311/scLLM-pretrain/blob/main/Training.png)
 
 ## Saving Best Model
 Save the best performing model as "best_model.pt", which saves all model parameters.
