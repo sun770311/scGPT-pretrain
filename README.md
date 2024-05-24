@@ -1,9 +1,4 @@
 # scLLM-pretrain
-Hannah Sun
-
-Mentor: Dr. Guan Tao Zheng
-
-MobiDrop (Zhejiang) Co., Ltd.
 
 ## Large Language Models
 Generative artificial intelligence (GenAI) is a branch of artificial intelligence that creates real-world text, images, music, and other forms of media.
@@ -15,7 +10,7 @@ An analogy can be drawn between language and cell biology. Words form sentences,
 
 However, current machine learning-based methods in single-cell research are quite fragmented and have limited data sets. To overcome this limitation, the project aims to develop a single-cell-based LLM. The model is pre-trained on vast amounts of data, and then fine-tuned and tested according to different analysis tasks.
 
-Drawing on existing foundational model scGPT, we pretrained an LLM on 300,000 human blood cells, minimizing loss between real and predicted gene expression levels. This versatile model hopes to improve the accuracy and efficiency of single-cell analysis, thereby accelerating discovery and innovation in biology.
+Drawing on existing foundational model scGPT, we pretrained a customized version of a Transformer-based language model on 300,000 human blood cells, minimizing loss between real and predicted gene expression levels. This versatile model hopes to improve the accuracy and efficiency of single-cell analysis, thereby accelerating discovery and innovation in biology.
 
 ## Data Sampling
 Retrieve all human blood cells via the CELLxGENE Census API. Select human blood cells by complete samples at random, ensuring that their total does not surpass 300,000.
@@ -74,6 +69,13 @@ https://github.com/bowang-lab/scGPT/tree/main
 https://www.nature.com/articles/s41592-024-02201-0
 
 Link to the CELLxGENE Census API: https://chanzuckerberg.github.io/cellxgene-census/
+
+## People
+Hannah Sun
+
+Mentor: Dr. Guan Tao Zheng
+
+MobiDrop (Zhejiang) Co., Ltd.
 
 
 
