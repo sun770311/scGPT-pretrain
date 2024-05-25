@@ -58,8 +58,9 @@ b. The mean square error between the true value and the predicted value based on
 5. Calculate the total loss of all batches in a cycle
 ![Training](https://github.com/sun770311/scLLM-pretrain/blob/main/Training.png)
 
-## Saving Best Model
+## Results
 Save the best performing model as "best_model.pt", which saves all model parameters.
+
 
 ## References
 The project draws on existing single-cell LLM scGPT's framework. Details can be found in the scGPT paper and codebase.
