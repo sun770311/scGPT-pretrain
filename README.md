@@ -59,8 +59,11 @@ b. The mean square error between the true value and the predicted value based on
 ![Training](https://github.com/sun770311/scLLM-pretrain/blob/main/Training.png)
 
 ## Results
-Save the best performing model as "best_model.pt", which saves all model parameters.
+Save the best performing model as "best_model.pt", which saves all model parameters. Achieved a 54% reduction in average mean-squared training error after 6 pre-training epochs.
 ![Run Summary](https://github.com/sun770311/scLLM-pretrain/blob/main/run_summary.png)
+
+## Limitations
+Validation error decreased by 6% after pre-training. We acknowledge that 300,000 cells is a relatively small amount of data to perform pre-training on. One main goal when revisiting this project in the future would be to expand the training data and implementing regularization techniques to avoid overfitting.
 
 ## References
 The project draws on existing single-cell LLM scGPT's framework. Details can be found in the scGPT paper and codebase.
